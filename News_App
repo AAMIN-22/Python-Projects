@@ -1,0 +1,16 @@
+import requests
+query = input("What Type of News are You Interested in Today ? => ")
+api = "6b95f7def0024bd5bb6ba4e9061f7791"
+
+url = f"https://newsapi.org/v2/everything?q={query}&from=2025-07-15&sortBy=publishedAt&apiKey={api}"
+
+print(url)
+
+r = requests.get(url)
+data = r.json()
+
+articles = data["articles"]
+
+for index, article in enumerate(articles):
+    print(index + 1, article["title"], article["url"])
+    print("\n--------------------------------------------\n")
