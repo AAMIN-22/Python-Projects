@@ -1,0 +1,7 @@
+import time
+from plyer import notification
+
+while True:
+    print("Its Time to Drink Water ")
+    notification.notify(title = "Its time to Drink Water ", message = "Drink Now and Keep Hydrated")
+    time.sleep(60 * 60)
